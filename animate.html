@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bird Animation</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    #sea {
+        width: 100%;
+        height: 100vh;
+        background-image: url('./cartoon\ jungle.jpg');
+        background-size: cover;
+        position: relative;
+    }
+   
+    #bird{
+        position: absolute;
+        width: 100px;
+        top: 50%;
+        transform: translateY(-100%);
+    }
+</style>
+</head>
+<body>
+
+<div id="sea">
+    <img src="bird.png" id="bird" alt="bird">
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+   
+    function swim() {
+        $('#bird').animate({ left: '100%' }, 5000, 'linear', function() {
+           
+            $(this).css('right', '-100px');
+      
+            swim();
+        });
+    }
+
+    
+    swim();
+});
+</script>
+
+</body>
+</html>

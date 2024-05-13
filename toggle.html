@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Actions</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+      #content {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+        border: 1px solid #ccc;
+        margin-top: 50px;
+        background-color: skyblue;
+      }
+
+      #swipeUp {
+        color: rgb(109, 16, 240);
+        background-color: rgb(12, 221, 96);
+        align-items: center;
+      }
+
+      #swipeDown {
+        color: rgb(109, 16, 240);
+        background-color: rgb(12, 221, 96);
+      }
+
+      #toggle {
+        color: rgb(109, 16, 240);
+        background-color: rgb(12, 221, 96);
+      }
+
+      .h1 {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="h1">jQuery Actions</h1><br>
+      <button id="swipeUp">Swipe Up</button>
+      <button id="swipeDown">Swipe Down</button>
+      <button id="toggle">Toggle</button><br>
+    </div>
+    <div id="content">
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum aspernatur incidunt aperiam rerum soluta ab?
+        Natus maxime voluptas quis, magnam perferendis harum. Ipsum asperiores harum, aspernatur deserunt qui omnis
+        itaque, consequatur dolores beatae eveniet explicabo ab alias reprehenderit quaerat nulla! Ad maiores recusandae
+        ipsam quod rerum ut dolor at sunt debitis. Aliquam quas facilis nesciunt quam, ut hic autem placeat harum, earum
+        quaerat vero quis officiis officia, vel veniam? Velit repellat illo officiis omnis veritatis. Quaerat officiis
+        nemo sit quibusdam dolore nisi, architecto mollitia ducimus iusto doloremque provident nobis corrupti ut amet
+        quos atque iste similique dolor nesciunt cum porro? Facilis numquam, itaque nobis dolores officiis aliquam sed
+        rerum laboriosam fugit ipsum quisquam, officia nihil ratione sit sapiente vitae error ab? Quia excepturi minima,
+        voluptas tempore esse officia quis repellendus, perferendis omnis culpa exercitationem fugiat eius vel dolorum
+        optio pariatur nesciunt doloribus, officiis nobis aliquid obcaecati possimus! Eveniet, necessitatibus reiciendis
+        doloribus reprehenderit incidunt harum ipsum deleniti non doloremque sit! Vitae aut molestiae architecto autem
+        unde ad atque ut repudiandae ipsam eveniet, cupiditate excepturi reiciendis quisquam quaerat eligendi amet rem
+        fugiat sequi id ullam corporis. Saepe eius, voluptatibus nostrum accusantium inventore, vel facilis earum sequi
+        veritatis consectetur nam. Voluptatem perferendis, sunt harum nihil quasi culpa impedit consequatur natus eius
+        molestiae sequi error rerum veritatis iusto, est similique quis autem eligendi et laborum architecto, maiores
+        ducimus quidem accusamus! Eos sit totam doloremque suscipit ut asperiores! Alias, itaque earum necessitatibus
+        rem temporibus amet tempore, voluptates eveniet deleniti cumque vel aperiam laborum, consequatur quas totam
+        ducimus dolor assumenda. Suscipit excepturi magni illo et nemo eligendi unde illum impedit ea eius, odit, ullam
+        obcaecati. Dignissimos ut incidunt repellat soluta quis consectetur pariatur tempore accusantium dolorum
+        voluptatum, rerum iusto amet tempora sed alias iste beatae corporis debitis praesentium. Dolore consectetur
+        doloremque distinctio optio dolorem doloribus quae quo tenetur repellendus? Soluta ab optio perspiciatis
+        mollitia aliquam impedit officia temporibus porro commodi, autem, minima labore dignissimos, rerum culpa maxime
+        debitis qui eos aperiam consectetur fuga tenetur enim ea sint! Vero autem nam quisquam praesentium qui repellat
+        earum possimus optio, suscipit quam, architecto dolorem quaerat. Cupiditate similique consectetur amet deserunt
+        distinctio, nisi laborum voluptate! Delectus nulla aspernatur voluptatum veritatis ullam minus eveniet dolorem
+        quod voluptate molestias et harum optio quisquam quos blanditiis doloremque illo, sapiente beatae, quasi
+        reprehenderit nostrum nam. Voluptatum perferendis ad similique. Autem temporibus soluta repellat magni nulla
+        illum vero, porro distinctio asperiores quisquam repudiandae quis perspiciatis sunt, quaerat earum dolores odio
+        ab quas odit iusto voluptatibus. Repellendus porro deserunt velit eius perspiciatis, dolores eveniet temporibus
+        perferendis esse explicabo officiis blanditiis quae ab consequatur. Eaque, repudiandae officia aut aliquid
+        repellat facilis veniam molestiae distinctio rem rerum facere earum expedita quas possimus. Fuga accusantium
+        voluptatibus quidem itaque maiores animi pariatur. Inventore perspiciatis nostrum optio unde autem tempore at
+        quidem architecto, expedita tempora molestiae ipsam laborum, ipsum aliquam? Deserunt dolorem ex, rem eaque
+        maxime sapiente corporis dolorum exercitationem voluptatem aspernatur explicabo doloribus inventore est dolores
+        praesentium similique! Rem cupiditate, reiciendis aliquid tempore odit quam quo pariatur natus error
+        repellendus..</p>
+    </div>
+
+
+
+    <script>
+      $(document).ready(function () {
+        $("#swipeUp").click(function () {
+          $("#content").slideUp("slow")
+        })
+      })
+      $(document).ready(function () {
+        $("#swipeDown").click(function () {
+          $("#content").slideDown("slow")
+        })
+      })
+      $(document).ready(function () {
+        $("#toggle").click(function () {
+          $("#content").toggle("slow")
+        })
+      })
+    </script>
+
+  </body>
+
+</html>

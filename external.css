@@ -1,0 +1,14 @@
+
+.externalcss { 
+	text-align: center; 
+} 
+
+.heading { 
+	font-size: 60px; 
+	color: green; 
+} 
+
+#paragraph { 
+	font-size: 25px; 
+	color: skyblue; 
+};
