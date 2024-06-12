@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session Management Example</title>
+</head>
+<body>
+    <?php
+    session_start();
+
+    // Define a simple username and password for demonstration
+    $valid_username = "admin";
+    $valid_password = "password";
+
+    // Initialize variables for error message and success message
+    $error_msg = $success_msg = "";
+
+    // Handle login
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        // Validate credentials
+        if ($username == $valid_username && $password == $valid_password) {
+            // Set session variables
+            $_SESSION["loggedin"] = true;
+            $_SESSION["username"] = $username;
+            $success_msg = "Login successful!";
+        } else {
+            $error_msg = "Invalid username or password.";
+        }
+    }
+
+    // Handle logout
+    if (isset($_GET['logout'])) {
+        // Destroy the session
+        session_unset();
+        session_destroy();
+        $success_msg = "You have successfully logged out.";
+    }
+    ?>
+
+    <h2>Session Management Example</h2>
+
+    <?php if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true): ?>
+        <p>Welcome, <?php echo htmlspecialchars($_SESSION["username"]); ?>!</p>
+        <p><a href="?logout=true">Logout</a></p>
+    <?php else: ?>
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+            Username: <input type="text" name="username" required>
+            <br><br>
+            Password: <input type="password" name="password" required>
+            <br><br>
+            <input type="submit" name="login" value="Login">
+        </form>
+    <?php endif; ?>
+
+    <?php
+    if ($error_msg) {
+        echo "<p style='color: red;'>$error_msg</p>";
+    }
+    if ($success_msg) {
+        echo "<p style='color: green;'>$success_msg</p>";
+    }
+    ?>
+</body>
+</html>
