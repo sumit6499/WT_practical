@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Cache-Control" content="post-check=0, pre-check=0" false>
+    <meta http-equiv="Pragma" content="no-cache">
+    <title>Simple PHP Form Validation with AJAX</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h2>PHP Form Validation Example with AJAX</h2>
+    <form id="myForm" method="post">
+        Name: <input type="text" name="name" id="name">
+        <span class="error" id="nameErr"></span>
+        <br><br>
+        E-mail: <input type="text" name="email" id="email">
+        <span class="error" id="emailErr"></span>
+        <br><br>
+        Gender:
+        <input type="radio" name="gender" value="female" id="female">Female
+        <input type="radio" name="gender" value="male" id="male">Male
+        <span class="error" id="genderErr"></span>
+        <br><br>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        $(document).ready(function() {
+            $("#myForm").submit(function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                $.ajax({
+                    url: 'process.php',
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        $("#result").html(response); // Display the response in the result div
+                    },
+                    error: function(xhr, status, error) {
+                        $("#result").html("An error occurred: " + error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
